@@ -9,7 +9,6 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -21,6 +20,7 @@ import javax.swing.JPanel;
  */
 public class ScoreBoard extends JPanel {
 
+    //create singleton ScoreBoard object
     public static ScoreBoard scoreBoard = new ScoreBoard();
 
     //label for showing player scores
@@ -32,6 +32,7 @@ public class ScoreBoard extends JPanel {
     //panels for displaying the thrown darts values
     JPanel dartPanel = new JPanel(new GridLayout());
 
+    //labels for each dart thrown
     JLabel dart1Label = new JLabel();
     JLabel dart2Label = new JLabel();
     JLabel dart3Label = new JLabel();
@@ -62,6 +63,7 @@ public class ScoreBoard extends JPanel {
     //panels to display player scores
     JPanel p1ScorePanel = new JPanel();
     JPanel p2ScorePanel = new JPanel();
+    //panel for showing name of current game being played
     JPanel gameTypePanel = new JPanel();
 
     //ScoreBoard constructor
@@ -103,15 +105,14 @@ public class ScoreBoard extends JPanel {
         dartPanel.setBounds(0, 0, 80, 20);
 
         background.setBounds(0, 0, 304, 564);
-        //image of scoreboard
-        BufferedImage img;
+        //get image of scoreboard
         JLabel scoreboard = new JLabel();
         ImageIcon scoreIcon = new ImageIcon(getClass().getClassLoader().getResource("resources/scoreboard.png"));
         background.add(scoreboard);
         scoreboard.setIcon(scoreIcon);
         background.setOpaque(false);
 
-        //image indicating no scores
+        //labels for no marks on each number on p1's side of the cricket board
         JLabel p1ScoreNone = new JLabel();
         JLabel p1ScoreNone19 = new JLabel();
         JLabel p1ScoreNone18 = new JLabel();
@@ -127,6 +128,7 @@ public class ScoreBoard extends JPanel {
         JLabel p2ScoreNone15 = new JLabel();
         JLabel p2ScoreNoneB = new JLabel();
 
+        //get image indicating no marks
         ImageIcon noneIcon = new ImageIcon(getClass().getClassLoader().getResource("resources/none.png"));
         p1ScoreNone.setIcon(noneIcon);
         p1ScoreNone19.setIcon(noneIcon);
@@ -143,7 +145,7 @@ public class ScoreBoard extends JPanel {
         p2ScoreNone15.setIcon(noneIcon);
         p2ScoreNoneB.setIcon(noneIcon);
 
-        //image indicating one mark
+        //labels for one mark on p1's side of the cricket board
         JLabel p1ScoreOne = new JLabel();
         JLabel p1ScoreOne19 = new JLabel();
         JLabel p1ScoreOne18 = new JLabel();
@@ -174,7 +176,7 @@ public class ScoreBoard extends JPanel {
         p2ScoreOne15.setIcon(oneIcon);
         p2ScoreOneB.setIcon(oneIcon);
 
-        //image indicating 2 marks
+        //labels for 2 marks on p1's side of the cricket board
         JLabel p1ScoreTwo = new JLabel();
         JLabel p1ScoreTwo19 = new JLabel();
         JLabel p1ScoreTwo18 = new JLabel();
@@ -189,6 +191,8 @@ public class ScoreBoard extends JPanel {
         JLabel p2ScoreTwo16 = new JLabel();
         JLabel p2ScoreTwo15 = new JLabel();
         JLabel p2ScoreTwoB = new JLabel();
+        
+        //get image indicating 2 marks
         ImageIcon twoIcon = new ImageIcon(getClass().getClassLoader().getResource("resources/two.png"));
         p1ScoreTwo.setIcon(twoIcon);
         p1ScoreTwo19.setIcon(twoIcon);
@@ -205,7 +209,7 @@ public class ScoreBoard extends JPanel {
         p2ScoreTwo15.setIcon(twoIcon);
         p2ScoreTwoB.setIcon(twoIcon);
 
-        //image indicating 3 marks
+        //labels for 3 marks on p1's side of the cricket board
         JLabel p1ScoreThree = new JLabel();
         JLabel p1ScoreThree19 = new JLabel();
         JLabel p1ScoreThree18 = new JLabel();
@@ -220,6 +224,8 @@ public class ScoreBoard extends JPanel {
         JLabel p2ScoreThree16 = new JLabel();
         JLabel p2ScoreThree15 = new JLabel();
         JLabel p2ScoreThreeB = new JLabel();
+        
+        //get image indicating 3 marks
         ImageIcon threeIcon = new ImageIcon(getClass().getClassLoader().getResource("resources/three.png"));
         p1ScoreThree.setIcon(threeIcon);
         p1ScoreThree19.setIcon(threeIcon);
@@ -278,48 +284,56 @@ public class ScoreBoard extends JPanel {
         p2scores18.add(p2ScoreThree18, "three");
         p2scores18.setBounds(200, 180, 45, 38);
 
+        //adding labels to player 1 17 position
         p1scores17.add(p1ScoreNone17, "none");
         p1scores17.add(p1ScoreOne17, "one");
         p1scores17.add(p1ScoreTwo17, "two");
         p1scores17.add(p1ScoreThree17, "three");
         p1scores17.setBounds(50, 237, 45, 38);
 
+        //adding labels to player 2 17 position
         p2scores17.add(p2ScoreNone17, "none");
         p2scores17.add(p2ScoreOne17, "one");
         p2scores17.add(p2ScoreTwo17, "two");
         p2scores17.add(p2ScoreThree17, "three");
         p2scores17.setBounds(200, 237, 45, 38);
 
+        //adding labels to player 1 16 position
         p1scores16.add(p1ScoreNone16, "none");
         p1scores16.add(p1ScoreOne16, "one");
         p1scores16.add(p1ScoreTwo16, "two");
         p1scores16.add(p1ScoreThree16, "three");
         p1scores16.setBounds(50, 280, 45, 38);
 
+        //adding labels to player 2 16 position
         p2scores16.add(p2ScoreNone16, "none");
         p2scores16.add(p2ScoreOne16, "one");
         p2scores16.add(p2ScoreTwo16, "two");
         p2scores16.add(p2ScoreThree16, "three");
         p2scores16.setBounds(200, 280, 45, 38);
 
+        //adding labels to player 1 15 position
         p1scores15.add(p1ScoreNone15, "none");
         p1scores15.add(p1ScoreOne15, "one");
         p1scores15.add(p1ScoreTwo15, "two");
         p1scores15.add(p1ScoreThree15, "three");
         p1scores15.setBounds(50, 335, 45, 38);
 
+        //adding labels to player 2 15 position
         p2scores15.add(p2ScoreNone15, "none");
         p2scores15.add(p2ScoreOne15, "one");
         p2scores15.add(p2ScoreTwo15, "two");
         p2scores15.add(p2ScoreThree15, "three");
         p2scores15.setBounds(200, 335, 45, 38);
 
+        //adding labels to player 1 bull position
         p1scoresB.add(p1ScoreNoneB, "none");
         p1scoresB.add(p1ScoreOneB, "one");
         p1scoresB.add(p1ScoreTwoB, "two");
         p1scoresB.add(p1ScoreThreeB, "three");
         p1scoresB.setBounds(50, 383, 45, 38);
 
+        //adding labels to player 2 bull position
         p2scoresB.add(p2ScoreNoneB, "none");
         p2scoresB.add(p2ScoreOneB, "one");
         p2scoresB.add(p2ScoreTwoB, "two");
