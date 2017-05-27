@@ -190,18 +190,21 @@ public class Window extends JFrame {
             DartBoard.board.p2Total = 0;
             ScoreBoard.scoreBoard.p1ScoreLabel.setText(String.valueOf("0"));
             ScoreBoard.scoreBoard.p2ScoreLabel.setText(String.valueOf("0"));
+            ScoreBoard.scoreBoard.gameTypeLabel.setText("Cricket");
         }
         if (gameFlag.gameType == 2) {
             DartBoard.board.p1Total = 301;
             DartBoard.board.p2Total = 301;
             ScoreBoard.scoreBoard.p1ScoreLabel.setText(String.valueOf("301"));
             ScoreBoard.scoreBoard.p2ScoreLabel.setText(String.valueOf("301"));
+            ScoreBoard.scoreBoard.gameTypeLabel.setText("301");
         }
         if (gameFlag.gameType == 3) {
             DartBoard.board.p1Total = 0;
             DartBoard.board.p2Total = 0;
             ScoreBoard.scoreBoard.p1ScoreLabel.setText(String.valueOf("0"));
             ScoreBoard.scoreBoard.p2ScoreLabel.setText(String.valueOf("0"));
+            ScoreBoard.scoreBoard.gameTypeLabel.setText("Count Up");
         }
 
         if (gameFlag.gameType == 4) {
@@ -209,6 +212,7 @@ public class Window extends JFrame {
             DartBoard.board.p2Total = 501;
             ScoreBoard.scoreBoard.p1ScoreLabel.setText(String.valueOf("501"));
             ScoreBoard.scoreBoard.p2ScoreLabel.setText(String.valueOf("501"));
+            ScoreBoard.scoreBoard.gameTypeLabel.setText("501");
         }
 
         if (gameFlag.gameType == 5) {
@@ -216,6 +220,7 @@ public class Window extends JFrame {
             DartBoard.board.p2Total = 701;
             ScoreBoard.scoreBoard.p1ScoreLabel.setText(String.valueOf("701"));
             ScoreBoard.scoreBoard.p2ScoreLabel.setText(String.valueOf("701"));
+            ScoreBoard.scoreBoard.gameTypeLabel.setText("701");
         }
 
         if (gameFlag.gameType == 6) {
@@ -223,6 +228,7 @@ public class Window extends JFrame {
             DartBoard.board.p2Total = 0;
             ScoreBoard.scoreBoard.p1ScoreLabel.setText(String.valueOf("0"));
             ScoreBoard.scoreBoard.p2ScoreLabel.setText(String.valueOf("0"));
+            ScoreBoard.scoreBoard.gameTypeLabel.setText("All Fives");
         }
     }
 
