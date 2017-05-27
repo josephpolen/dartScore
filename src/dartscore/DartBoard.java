@@ -44,14 +44,15 @@ public class DartBoard extends JPanel {
     int roundTotal;
     int score;
 
-    CardLayout cardLayout = (CardLayout) ScoreBoard.scoreBoard.p1scores20.getLayout();
+    //create singleton DartBoard object
     public static DartBoard board = new DartBoard();
 
     DartBoard() {
 
         //array for keeping track of scores in cricket
         cricketArray = new int[7][2];
-        
+
+        //set player 1 initial score color to red
         ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
 
         //initial scores based on gametype
@@ -76,73 +77,74 @@ public class DartBoard extends JPanel {
             @Override
             //mouse listener for clicking on dartboard
             public void mouseClicked(MouseEvent e) {
+                //reset current dart hit and increment darts thrown every click
                 score = 0;
                 dartCount++;
-                
+
                 //set origin of dartboard at bullseye
                 double xOrigin = 278;
                 double yOrigin = 278;
                 double x = e.getX();
                 double y = e.getY();
                 //   System.out.println("x:" + x + " y:"+ y);
-                
+
                 //get angle of click relative to bullseye
                 double delta_x = x - xOrigin;
                 double delta_y = y - yOrigin;
                 double angle = Math.atan2(delta_y, delta_x);
                 // System.out.println("Angle: " + angle);
-                
+
                 //get distance of click from bullseye
                 double dist = Math.abs(Math.sqrt((xOrigin - x) * (xOrigin - x) + (yOrigin - y) * (yOrigin - y)));
                 //  System.out.println("Distance: " + dist);
-                
+
                 //its player ones turn
                 if (p1Turn) {
-                    
+
                     //highlight current players score
                     ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
                     ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.BLACK);
-                    
+
                     //Player 1 throw 1
                     if (dartCount == 1) {
                         clearDarts();
                         score = score(angle, dist);
-                        
+
                         //gameType All Fives
                         if (gameFlag.gameType == 6) {
                             ScoreBoard.scoreBoard.gameTypeLabel.setText("All Fives");
                             allFives();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
-                        
+
                         //gameType 701
                         if (gameFlag.gameType == 5) {
                             ScoreBoard.scoreBoard.gameTypeLabel.setText("701");
                             x01();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
-                        
+
                         //gameType 501
                         if (gameFlag.gameType == 4) {
                             ScoreBoard.scoreBoard.gameTypeLabel.setText("501");
                             x01();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
-                        
+
                         //gameType Count Up
                         if (gameFlag.gameType == 3) {
                             ScoreBoard.scoreBoard.gameTypeLabel.setText("Count Up");
                             countUp();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
-                        
+
                         //gameType 301
                         if (gameFlag.gameType == 2) {
                             ScoreBoard.scoreBoard.gameTypeLabel.setText("301");
                             x01();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
-                        
+
                         //gameType Cricket
                         if (gameFlag.gameType == 1) {
                             ScoreBoard.scoreBoard.gameTypeLabel.setText("Cricket");
@@ -150,7 +152,7 @@ public class DartBoard extends JPanel {
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
                     }
-                    
+
                     //Player 1 throw 2
                     if (dartCount == 2) {
                         score = score(angle, dist);
@@ -162,17 +164,17 @@ public class DartBoard extends JPanel {
                             x01();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
                         }
-                        
+
                         if (gameFlag.gameType == 4) {
                             x01();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
                         }
                         if (gameFlag.gameType == 3) {
                             countUp();
-                            
+
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
                         }
-                        
+
                         if (gameFlag.gameType == 2) {
                             x01();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
@@ -181,9 +183,9 @@ public class DartBoard extends JPanel {
                             cricketThrow();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
                         }
-                        
+
                     }
-                    
+
                     //Player 1 throw 3
                     if (dartCount == 3) {
                         score = score(angle, dist);
@@ -191,66 +193,52 @@ public class DartBoard extends JPanel {
                             allFives();
                             if (roundTotal % 5 == 0) {
                                 p1Total += (roundTotal / 5);
-                                
+
                             }
                             ScoreBoard.scoreBoard.p1ScoreLabel.setText(String.valueOf(p1Total));
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            roundTotal = 0;
-                            p1Turn = false;
+                            //reset counters and switch player
+                            switchToP2();
                         }
                         if (gameFlag.gameType == 5) {
                             x01();
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            
-                            p1Turn = false;
+                            switchToP2();
                         }
-                        
+
                         if (gameFlag.gameType == 4) {
                             x01();
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            
-                            p1Turn = false;
+                            switchToP2();
                         }
                         if (gameFlag.gameType == 3) {
                             countUp();
-                            
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            
-                            p1Turn = false;
-                            
+                            switchToP2();
                         }
-                        
+
                         if (gameFlag.gameType == 2) {
                             x01();
-                            
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            
-                            p1Turn = false;
-                            
+                            switchToP2();
                         }
                         if (gameFlag.gameType == 1) {
                             cricketThrow();
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            p1Turn = false;
-                            
+                            switchToP2();
+
                         }
-                        
+
                     }
                 }
-                
+
                 //Player 2 turn
                 if (!p1Turn) {
-                    
+
                     //highlight player 2 score
                     ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.RED);
                     ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.BLACK);
-                    
+
                     //Player 2 throw 1
                     if (dartCount == 1) {
                         clearDarts();
@@ -263,7 +251,7 @@ public class DartBoard extends JPanel {
                             x01();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
-                        
+
                         if (gameFlag.gameType == 4) {
                             x01();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
@@ -272,7 +260,7 @@ public class DartBoard extends JPanel {
                             countUp();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
-                        
+
                         if (gameFlag.gameType == 2) {
                             x01();
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
@@ -282,7 +270,7 @@ public class DartBoard extends JPanel {
                             ScoreBoard.scoreBoard.dart1Label.setText(hit);
                         }
                     }
-                    
+
                     //Player 2 throw 2
                     if (dartCount == 2) {
                         score = score(angle, dist);
@@ -294,7 +282,7 @@ public class DartBoard extends JPanel {
                             x01();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
                         }
-                        
+
                         if (gameFlag.gameType == 4) {
                             x01();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
@@ -303,7 +291,7 @@ public class DartBoard extends JPanel {
                             countUp();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
                         }
-                        
+
                         if (gameFlag.gameType == 2) {
                             x01();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
@@ -312,12 +300,12 @@ public class DartBoard extends JPanel {
                             cricketThrow();
                             ScoreBoard.scoreBoard.dart2Label.setText(hit);
                         }
-                        
+
                     }
-                    
+
                     //Player 2 throw 3
                     if (dartCount == 3) {
-                        
+
                         score = score(angle, dist);
                         if (gameFlag.gameType == 6) {
                             allFives();
@@ -326,64 +314,45 @@ public class DartBoard extends JPanel {
                             }
                             ScoreBoard.scoreBoard.p2ScoreLabel.setText(String.valueOf(p2Total));
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            roundTotal = 0;
-                            p1Turn = true;
-                            ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
-                            ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.BLACK);
+                            //reset totals and switch player
+                            switchToP1();
                         }
                         if (gameFlag.gameType == 5) {
                             x01();
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            p1Turn = true;
-                            ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
-                            ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.BLACK);
-                            
+                            switchToP1();
+
                         }
-                        
+
                         if (gameFlag.gameType == 4) {
                             x01();
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            p1Turn = true;
-                            ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
-                            ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.BLACK);
+                            switchToP1();
                         }
                         if (gameFlag.gameType == 3) {
                             countUp();
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            p1Turn = true;
-                            ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
-                            ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.BLACK);
-                            dartCount = 0;
-                            
+                            switchToP1();
+
                         }
-                        
+
                         if (gameFlag.gameType == 2) {
                             x01();
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            p1Turn = true;
-                            ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
-                            ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.BLACK);
-                            
+                            switchToP1();
+
                         }
                         if (gameFlag.gameType == 1) {
                             cricketThrow();
                             ScoreBoard.scoreBoard.dart3Label.setText(hit);
-                            dartCount = 0;
-                            p1Turn = true;
-                            ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
-                            ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.BLACK);
-                            
+                            switchToP1();
                         }
-                        
                     }
                 }
             }
         }
         );
+        //add dartBoard to panel
         add(dartBoard);
 
     }
@@ -397,6 +366,7 @@ public class DartBoard extends JPanel {
         double angle = ang;
         double distance = dist;
 
+        //if clicked between these angles, then the hit is this number
         if ((angle >= -1.72) && (angle < -1.415)) {
             hit = "20";
             score = 20;
@@ -459,6 +429,8 @@ public class DartBoard extends JPanel {
             score = 5;
         }
 
+        //if clicked between these distances from origin, then hit is doublebull 
+        //bull, triple, double or miss
         if ((distance >= 0) && (distance < 9)) {
             hit = "DB";
             score = 50;
@@ -1483,7 +1455,7 @@ public class DartBoard extends JPanel {
                         cricketArray[0][1] += 2;
                     }
                 }
-                System.out.println(cricketArray[0][0]);
+               
                 if (cricketArray[0][1] == 2) {
                     CardLayout cardLayout = (CardLayout) ScoreBoard.scoreBoard.p2scoresB.getLayout();
                     cardLayout.show(ScoreBoard.scoreBoard.p2scoresB, "two");
@@ -1497,8 +1469,8 @@ public class DartBoard extends JPanel {
 
         }
     }
+    
     //method resets the dartLabels to null
-
     public void clearDarts() {
         ScoreBoard.scoreBoard.dart1Label.setText("");
         ScoreBoard.scoreBoard.dart2Label.setText("");
@@ -1634,6 +1606,7 @@ public class DartBoard extends JPanel {
 
     }
 
+    //method contains the logic for the all fives game
     public void allFives() {
         if (p1Turn) {
             roundTotal += score;
@@ -1646,6 +1619,7 @@ public class DartBoard extends JPanel {
         }
     }
 
+    //method contains the logic for the 301, 501, and 701 games
     public void x01() {
 
         if (p1Turn) {
@@ -1659,6 +1633,7 @@ public class DartBoard extends JPanel {
         }
     }
 
+    //method contains the logic for the count up game
     public void countUp() {
         if (p1Turn) {
             p1Total += score;
@@ -1671,6 +1646,8 @@ public class DartBoard extends JPanel {
         }
     }
 
+    //method calls cricket and cricketScore methods for p1 or p2 and updates the
+    //scoreboard
     public void cricketThrow() {
         if (p1Turn) {
             cricket(hit);
@@ -1683,5 +1660,23 @@ public class DartBoard extends JPanel {
             cricketScore();
             ScoreBoard.scoreBoard.p2ScoreLabel.setText(String.valueOf(p2Total));
         }
+    }
+
+    //Method resets counters and sets current player to player 2
+    public void switchToP2() {
+        dartCount = 0;
+        roundTotal = 0;
+        p1Turn = false;
+
+    }
+    
+    //Method resets counters and sets current player to player 1
+    public void switchToP1() {
+        dartCount = 0;
+        roundTotal = 0;
+        p1Turn = true;
+        ScoreBoard.scoreBoard.p1ScoreLabel.setForeground(Color.RED);
+        ScoreBoard.scoreBoard.p2ScoreLabel.setForeground(Color.BLACK);
+
     }
 }
