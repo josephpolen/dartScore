@@ -616,7 +616,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p119IsClosed) || (!p219IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p219IsClosed) {
                         cricketArray[5][0] += 1;
                         if (cricketArray[5][0] >= 3) {
                             cricketArray[5][0] = 3;
@@ -644,7 +644,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p119IsClosed) || (!p219IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p119IsClosed) {
                         cricketArray[5][1] += 1;
                         if (cricketArray[5][1] >= 3) {
                             cricketArray[5][1] = 3;
@@ -675,7 +675,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p119IsClosed) || (!p219IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p219IsClosed) {
                         cricketArray[5][0] += 2;
                         if (cricketArray[5][0] >= 3) {
                             cricketArray[5][0] = 3;
@@ -698,7 +698,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p119IsClosed) || (!p219IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p119IsClosed) {
                         cricketArray[5][1] += 2;
                         if (cricketArray[5][1] >= 3) {
                             cricketArray[5][1] = 3;
@@ -724,7 +724,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p119IsClosed) || (!p219IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p219IsClosed) {
                         cricketArray[5][0] += 3;
                         if (cricketArray[5][0] >= 3) {
                             cricketArray[5][0] = 3;
@@ -743,7 +743,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p119IsClosed) || (!p219IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p119IsClosed) {
                         cricketArray[5][1] += 3;
                         if (cricketArray[5][1] >= 3) {
                             cricketArray[5][1] = 3;
@@ -765,7 +765,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p118IsClosed) || (!p218IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p219IsClosed) {
                         cricketArray[4][0] += 1;
                         if (cricketArray[4][0] >= 3) {
                             cricketArray[4][0] = 3;
@@ -793,7 +793,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p118IsClosed) || (!p218IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p118IsClosed) {
                         cricketArray[4][1] += 1;
                         if (cricketArray[4][1] >= 3) {
                             cricketArray[4][1] = 3;
@@ -824,7 +824,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p118IsClosed) || (!p218IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p218IsClosed) {
                         cricketArray[4][0] += 2;
                         if (cricketArray[4][0] >= 3) {
                             cricketArray[4][0] = 3;
@@ -847,7 +847,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p118IsClosed) || (!p218IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p118IsClosed) {
                         cricketArray[4][1] += 2;
                         if (cricketArray[4][1] >= 3) {
                             cricketArray[4][1] = 3;
@@ -873,7 +873,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p118IsClosed) || (!p218IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p218IsClosed) {
                         cricketArray[4][0] += 3;
                         if (cricketArray[4][0] >= 3) {
                             cricketArray[4][0] = 3;
@@ -892,7 +892,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p118IsClosed) || (!p218IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p118IsClosed) {
                         cricketArray[4][1] += 3;
                         if (cricketArray[4][1] >= 3) {
                             cricketArray[4][1] = 3;
@@ -914,7 +914,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p117IsClosed) || (!p217IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p217IsClosed) {
                         cricketArray[3][0] += 1;
                         if (cricketArray[3][0] >= 3) {
                             cricketArray[3][0] = 3;
@@ -942,7 +942,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p117IsClosed) || (!p217IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p117IsClosed) {
                         cricketArray[3][1] += 1;
                         if (cricketArray[3][1] >= 3) {
                             cricketArray[3][1] = 3;
@@ -973,7 +973,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p117IsClosed) || (!p217IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p217IsClosed) {
                         cricketArray[3][0] += 2;
                         if (cricketArray[3][0] >= 3) {
                             cricketArray[3][0] = 3;
@@ -996,7 +996,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p117IsClosed) || (!p217IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p117IsClosed) {
                         cricketArray[3][1] += 2;
                         if (cricketArray[3][1] >= 3) {
                             cricketArray[3][1] = 3;
@@ -1022,7 +1022,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p117IsClosed) || (!p217IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p217IsClosed) {
                         cricketArray[3][0] += 3;
                         if (cricketArray[3][0] >= 3) {
                             cricketArray[3][0] = 3;
@@ -1041,7 +1041,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p117IsClosed) || (!p217IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p117IsClosed) {
                         cricketArray[3][1] += 3;
                         if (cricketArray[3][1] >= 3) {
                             cricketArray[3][1] = 3;
@@ -1063,7 +1063,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p116IsClosed) || (!p216IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p216IsClosed) {
                         cricketArray[2][0] += 1;
                         if (cricketArray[2][0] >= 3) {
                             cricketArray[2][0] = 3;
@@ -1091,7 +1091,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p116IsClosed) || (!p216IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p116IsClosed) {
                         cricketArray[2][1] += 1;
                         if (cricketArray[2][1] >= 3) {
                             cricketArray[2][1] = 3;
@@ -1122,7 +1122,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p116IsClosed) || (!p216IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p216IsClosed) {
                         cricketArray[2][0] += 2;
                         if (cricketArray[2][0] >= 3) {
                             cricketArray[2][0] = 3;
@@ -1145,7 +1145,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p116IsClosed) || (!p216IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p116IsClosed) {
                         cricketArray[2][1] += 2;
                         if (cricketArray[2][1] >= 3) {
                             cricketArray[2][1] = 3;
@@ -1171,7 +1171,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p116IsClosed) || (!p216IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p216IsClosed) {
                         cricketArray[2][0] += 3;
                         if (cricketArray[2][0] >= 3) {
                             cricketArray[2][0] = 3;
@@ -1190,7 +1190,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p116IsClosed) || (!p216IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p116IsClosed) {
                         cricketArray[2][1] += 3;
                         if (cricketArray[2][1] >= 3) {
                             cricketArray[2][1] = 3;
@@ -1212,7 +1212,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p115IsClosed) || (!p215IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p215IsClosed) {
                         cricketArray[1][0] += 1;
                         if (cricketArray[1][0] >= 3) {
                             cricketArray[1][0] = 3;
@@ -1240,7 +1240,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p115IsClosed) || (!p215IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p115IsClosed) {
                         cricketArray[1][1] += 1;
                         if (cricketArray[1][1] >= 3) {
                             cricketArray[1][1] = 3;
@@ -1271,7 +1271,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p115IsClosed) || (!p215IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p215IsClosed) {
                         cricketArray[1][0] += 2;
                         if (cricketArray[1][0] >= 3) {
                             cricketArray[1][0] = 3;
@@ -1294,7 +1294,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p115IsClosed) || (!p215IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p115IsClosed) {
                         cricketArray[1][1] += 2;
                         if (cricketArray[1][1] >= 3) {
                             cricketArray[1][1] = 3;
@@ -1320,7 +1320,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p115IsClosed) || (!p215IsClosed)) {
-                    if (p220IsClosed) {
+                    if (p215IsClosed) {
                         cricketArray[1][0] += 3;
                         if (cricketArray[1][0] >= 3) {
                             cricketArray[1][0] = 3;
@@ -1339,7 +1339,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p115IsClosed) || (!p215IsClosed)) {
-                    if (p120IsClosed) {
+                    if (p115IsClosed) {
                         cricketArray[1][1] += 3;
                         if (cricketArray[1][1] >= 3) {
                             cricketArray[1][1] = 3;
@@ -1361,7 +1361,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p1BIsClosed) || (!p2BIsClosed)) {
-                    if (p220IsClosed) {
+                    if (p2BIsClosed) {
                         cricketArray[0][0] += 1;
                         if (cricketArray[0][0] >= 3) {
                             cricketArray[0][0] = 3;
@@ -1390,7 +1390,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p1BIsClosed) || (!p2BIsClosed)) {
-                    if (p120IsClosed) {
+                    if (p1BIsClosed) {
                         cricketArray[0][1] += 1;
                         if (cricketArray[0][1] >= 3) {
                             cricketArray[0][1] = 3;
@@ -1421,7 +1421,7 @@ public class DartBoard extends JPanel {
 
             if (p1Turn) {
                 if ((!p1BIsClosed) || (!p2BIsClosed)) {
-                    if (p220IsClosed) {
+                    if (p2BIsClosed) {
                         cricketArray[0][0] += 2;
                         if (cricketArray[0][0] >= 3) {
                             cricketArray[0][0] = 3;
@@ -1445,7 +1445,7 @@ public class DartBoard extends JPanel {
 
             if (!p1Turn) {
                 if ((!p1BIsClosed) || (!p2BIsClosed)) {
-                    if (p120IsClosed) {
+                    if (p1BIsClosed) {
                         cricketArray[0][1] += 2;
                         if (cricketArray[0][1] >= 3) {
                             cricketArray[0][1] = 3;
@@ -1547,6 +1547,14 @@ public class DartBoard extends JPanel {
     public static void cricketScore() {
         int[][] temp;
         temp = new int[7][2];
+        
+        System.out.println("20: " + cricketArray [6][1]);
+        System.out.println("19: " + cricketArray [5][1]);
+        System.out.println("18: " + cricketArray [4][1]);
+        System.out.println("17: " + cricketArray [3][1]);
+        System.out.println("16: " + cricketArray [2][1]);
+        System.out.println("15: " + cricketArray [1][1]);
+        System.out.println("B: " + cricketArray [0][1]);
 
         if (cricketArray[6][0] > 3) {
 
